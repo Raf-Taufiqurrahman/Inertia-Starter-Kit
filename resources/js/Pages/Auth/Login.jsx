@@ -1,97 +1,73 @@
-import { useEffect } from 'react';
-import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import AuthCard from '@/Components/AuthCard'
+import Button from '@/Components/Button'
+import InputGroup from '@/Components/InputGroup'
+import AuthLayout from '@/Layouts/AuthLayout'
+import { Head, useForm } from '@inertiajs/react'
+import { IconAt, IconCheck, IconPassword, IconPlus } from '@tabler/icons-react'
+import React from 'react'
 
-export default function Login({ status, canResetPassword }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
-        email: '',
-        password: '',
-        remember: false,
-    });
+export default function Login() {
 
-    useEffect(() => {
-        return () => {
-            reset('password');
-        };
-    }, []);
+    const {data, setData, post, errors} = useForm({
+        email : '',
+        password : '',
+    })
 
-    const submit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         post(route('login'));
-    };
+    }
 
-    return (
-        <GuestLayout>
-            <Head title="Log in" />
-
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
-
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
-
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
+  return (
+    <>
+        <Head title='Login'/>
+        <AuthCard>
+            <h1 className='text-xl font-bold mb-2 text-black'>Login</h1>
+            <p className='text-gray-500 text-xs mb-5'>
+                Selamat datang, masukan email dan kata sandi anda untuk melanjutkan.
+            </p>
+            <form onSubmit={handleSubmit}>
+                <div className='mb-4'>
+                    <InputGroup
+                        label={'Email'}
+                        type={'email'}
+                        placeholder={'Masukan email'}
+                        icon={<IconAt size={'20'} strokeWidth={'1.5'} className='text-gray-400'/>}
                         value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('email', e.target.value)}
+                        onChange={e => setData('email', e.target.value)}
+                        errors={errors.email}
                     />
-
-                    <InputError message={errors.email} className="mt-2" />
                 </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
+                <div className='mb-4'>
+                    <InputGroup
+                        label={'Kata Sandi'}
+                        type={'password'}
+                        placeholder={'Masukan kata sandi'}
+                        icon={<IconPassword size={'20'} strokeWidth={'1.5'} className='text-gray-400'/>}
                         value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        onChange={(e) => setData('password', e.target.value)}
+                        onChange={e => setData('password', e.target.value)}
+                        errors={errors.password}
                     />
-
-                    <InputError message={errors.password} className="mt-2" />
                 </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) => setData('remember', e.target.checked)}
-                        />
-                        <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
-                    </label>
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
+                <div className='flex flex-wrap items-center gap-2'>
+                    <Button
+                        className={'bg-teal-600 shadow shadow-teal-500'}
+                        icon={<IconCheck size={'20'} strokeWidth={'1.5'}/>}
+                        label={'Login'}
+                    />
+                    <Button
+                        className={'bg-sky-600 shadow shadow-sky-500'}
+                        icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
+                        label={'Daftar'}
+                        type={'link'}
+                        href={route('register')}
+                    />
                 </div>
             </form>
-        </GuestLayout>
-    );
+        </AuthCard>
+    </>
+  )
 }
+
+Login.layout = page => <AuthLayout children={page}/>

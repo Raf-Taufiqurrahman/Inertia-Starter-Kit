@@ -1,117 +1,97 @@
-import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import AuthCard from '@/Components/AuthCard'
+import Button from '@/Components/Button'
+import InputGroup from '@/Components/InputGroup'
+import AuthLayout from '@/Layouts/AuthLayout'
+import { Head, Link, useForm } from '@inertiajs/react'
+import { IconAbc, IconAt, IconCheck, IconPassword, IconPlus, IconUser } from '@tabler/icons-react'
+import React from 'react'
 
 export default function Register() {
-    const { data, setData, post, processing, errors, reset } = useForm({
+
+    const {data, setData, post, errors} = useForm({
         name: '',
-        email: '',
-        password: '',
+        email : '',
+        password : '',
         password_confirmation: '',
-    });
+    })
 
-    useEffect(() => {
-        return () => {
-            reset('password', 'password_confirmation');
-        };
-    }, []);
-
-    const submit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         post(route('register'));
-    };
+    }
 
-    return (
-        <GuestLayout>
-            <Head title="Register" />
-
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="name" value="Name" />
-
-                    <TextInput
-                        id="name"
-                        name="name"
+  return (
+    <>
+        <Head title='Login'/>
+        <AuthCard>
+            <h1 className='text-xl font-bold mb-2 text-black'>Register</h1>
+            <p className='text-gray-500 text-xs mb-5'>
+                Selamat datang, daftarkan diri anda untuk melanjutkan.
+            </p>
+            <form onSubmit={handleSubmit}>
+                <div className='mb-4'>
+                    <InputGroup
+                        label={'Nama'}
+                        type={'text'}
+                        placeholder={'Masukan nama'}
+                        icon={<IconAbc size={'20'} strokeWidth={'1.5'} className='text-gray-400'/>}
                         value={data.name}
-                        className="mt-1 block w-full"
-                        autoComplete="name"
-                        isFocused={true}
-                        onChange={(e) => setData('name', e.target.value)}
-                        required
+                        onChange={e => setData('name', e.target.value)}
+                        errors={errors.name}
                     />
-
-                    <InputError message={errors.name} className="mt-2" />
                 </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="email" value="Email" />
-
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
+                <div className='mb-4'>
+                    <InputGroup
+                        label={'Email'}
+                        type={'email'}
+                        placeholder={'Masukan email'}
+                        icon={<IconAt size={'20'} strokeWidth={'1.5'} className='text-gray-400'/>}
                         value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        onChange={(e) => setData('email', e.target.value)}
-                        required
+                        onChange={e => setData('email', e.target.value)}
+                        errors={errors.email}
                     />
-
-                    <InputError message={errors.email} className="mt-2" />
                 </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
+                <div className='mb-4'>
+                    <InputGroup
+                        label={'Kata Sandi'}
+                        type={'password'}
+                        placeholder={'Masukan kata sandi'}
+                        icon={<IconPassword size={'20'} strokeWidth={'1.5'} className='text-gray-400'/>}
                         value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                        required
+                        onChange={e => setData('password', e.target.value)}
+                        errors={errors.password}
                     />
-
-                    <InputError message={errors.password} className="mt-2" />
                 </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
-
-                    <TextInput
-                        id="password_confirmation"
-                        type="password"
-                        name="password_confirmation"
+                <div className='mb-4'>
+                    <InputGroup
+                        label={'Konfirmasi Kata Sandi'}
+                        type={'password'}
+                        placeholder={'Masukan konfirmasi kata sandi'}
+                        icon={<IconPassword size={'20'} strokeWidth={'1.5'} className='text-gray-400'/>}
                         value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        onChange={(e) => setData('password_confirmation', e.target.value)}
-                        required
+                        onChange={e => setData('password_confirmation', e.target.value)}
+                        errors={errors.password_confirmation}
                     />
-
-                    <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    <Link
+                <div className='flex flex-wrap items-center gap-2 mt-8'>
+                    <Button
+                        className={'bg-sky-600 shadow shadow-sky-500'}
+                        icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
+                        label={'Daftar'}
+                    />
+                    <Button
+                        className={'bg-gray-600 shadow shadow-gray-500'}
+                        icon={<IconUser size={'20'} strokeWidth={'1.5'}/>}
+                        label={'Sudah Punya Akun'}
+                        type={'link'}
                         href={route('login')}
-                        className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                    >
-                        Already registered?
-                    </Link>
-
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
+                    />
                 </div>
             </form>
-        </GuestLayout>
-    );
+        </AuthCard>
+    </>
+  )
 }
+
+Register.layout = page => <AuthLayout children={page}/>
