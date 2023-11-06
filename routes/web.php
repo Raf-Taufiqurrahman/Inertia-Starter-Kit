@@ -16,7 +16,7 @@ use Inertia\Inertia;
 
 Route::get('/', fn() => inertia('Auth/Login'));
 
-Route::get('/dashboard', function () {
+Route::get('/apps/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

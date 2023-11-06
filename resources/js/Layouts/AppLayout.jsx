@@ -1,13 +1,24 @@
-import React from 'react'
+import Navbar from '@/Components/Navbar'
+import Sidebar from '@/Components/Sidebar'
+import React, { useState } from 'react'
 
 export default function AppLayout({children}) {
-  return (
-    <div className='min-h-screen flex overflow-y-auto'>
-        <div className='flex-1 flex-col relative z-0 overflow-y-auto h-screen'>
-            <div className='w-full py-8 px-4 md:px-6 min-h-screen overflow-y-auto'>
-                {children}
+
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+    const toogleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    }
+
+    return (
+        <div className='min-h-screen flex overflow-y-auto'>
+            <Sidebar isSidebarOpen={isSidebarOpen}/>
+            <div className='flex-1 flex-col relative z-10 h-screen overflow-y-auto'>
+                <Navbar toggleSidebar={toogleSidebar}/>
+                <div className='w-full py-8 px-4 md:px-6 min-h-screen overflow-y-auto'>
+                    {children}
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
