@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Apps\PermissionController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -19,5 +20,10 @@ Route::get('/', fn() => inertia('Auth/Login'));
 Route::get('/apps/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::group(['as' => 'apps.', 'prefix' => 'apps', 'middleware' => ['auth']], function(){
+    // permission route
+    Route::get('/permissions', PermissionController::class)->name('permissions.index');
+});
 
 require __DIR__.'/auth.php';

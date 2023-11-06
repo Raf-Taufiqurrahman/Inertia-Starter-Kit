@@ -16,7 +16,7 @@ export default function Sidebar({ isSidebarOpen }) {
             ]
         },
         {
-            title: 'MASTER DATA',
+            title: 'USER MANAGEMENT',
             details: [
                 {title: 'Users', href: '/apps/users', icon: <IconUsers strokeWidth={'1.5'} size={'20'}/>},
                 {title: 'Roles', href: '/apps/roles', icon: <IconUserCheck strokeWidth={'1.5'} size={'20'}/>},
