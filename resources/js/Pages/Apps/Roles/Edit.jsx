@@ -5,6 +5,7 @@ import MultiSelect from '@/Components/MultiSelect'
 import AppLayout from '@/Layouts/AppLayout'
 import { Head, useForm, usePage } from '@inertiajs/react'
 import { IconPencilPlus, IconPencilX, IconUserCheck } from '@tabler/icons-react'
+import toast from 'react-hot-toast'
 import React from 'react'
 
 export default function Edit() {
@@ -34,7 +35,18 @@ export default function Edit() {
     const handleForm = async (e) => {
         e.preventDefault();
 
-        post(`/apps/roles/${role.id}`);
+        post(`/apps/roles/${role.id}`, {
+            onSuccess: () => {
+                toast.success('Data successfully updated!',{
+                    icon: '👏',
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                })
+            }
+        });
     }
 
     return (

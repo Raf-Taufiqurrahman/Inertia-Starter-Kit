@@ -39,7 +39,7 @@ export default function Navbar({toggleSidebar}) {
                 </button>
                 {links.map((link, i) => (
                     link.active === true &&
-                    <div className='flex flex-row items-center gap-1 border-l-2 border-double px-4' key={i}>
+                    <div className='flex flex-row items-center gap-1 md:border-l-2 md:border-double px-4' key={i}>
                         <span className='text-sm font-semibold text-gray-600'>{link.title}</span>
                         <IconChevronRight size={'15'} strokeWidth={'1.5'}/>
                         {link.details.map((detail, x) => (

@@ -5,8 +5,8 @@ import MultiSelect from '@/Components/MultiSelect'
 import AppLayout from '@/Layouts/AppLayout'
 import { Head, useForm, usePage } from '@inertiajs/react'
 import { IconPencilPlus, IconPencilX, IconUserCheck } from '@tabler/icons-react'
+import toast from 'react-hot-toast'
 import React from 'react'
-
 export default function Create() {
 
     // destruct permissions from usePage props
@@ -33,7 +33,18 @@ export default function Create() {
     const handleForm = async (e) => {
         e.preventDefault();
 
-        post('/apps/roles');
+        post('/apps/roles', {
+            onSuccess: () => {
+                toast.success('Data successfully created!',{
+                    icon: '👏',
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                })
+            }
+        });
     }
 
     return (

@@ -37,11 +37,11 @@ export default function ActionButton({ type, title, url, id }) {
         <>
             {type == 'delete' ?
                 <button onClick={() => deleteData(id)} className='bg-red-100 px-3 py-1 rounded-lg border border-red-100 hover:bg-red-200 flex items-center gap-1 text-red-500'>
-                    <IconTrash className='text-red-500' strokeWidth={'1.5'} size={'20'}/> {title}
+                    <IconTrash className='text-red-500' strokeWidth={'1.2'} size={'20'}/> {title}
                 </button>
                 :
-                <Link href={url} className='bg-indigo-100 px-3 py-1 rounded-lg border border-indigo-100 hover:bg-indigo-200 flex items-center gap-1 text-indigo-500'>
-                    <IconPencil size={'20'} strokeWidth={'1.5'}/> {title}
+                <Link href={url} className='bg-yellow-100 px-3 py-1 rounded-lg border border-yellow-100 hover:bg-yellow-200 flex items-center gap-1 text-yellow-500'>
+                    <IconPencil size={'20'} strokeWidth={'1.2'}/> {title}
                 </Link>
             }
         </>

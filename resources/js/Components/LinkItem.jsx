@@ -16,7 +16,7 @@ export default function LinkItem({ link, isSidebarOpen }) {
                 :
                 <Link
                     href={link.href}
-                    className={`border px-3 py-1 rounded-md ${url.startsWith(link.href) ? 'bg-sky-100 border-sky-200' : ''} hover:bg-sky-100 hover:border-sky-200`}
+                    className={`px-3 py-1 ${url.startsWith(link.href) ? 'border-l-2 bg-sky-100 border-l-sky-200 text-sky-600' : ''} hover:bg-sky-100 hover:border-l-sky-200 hover:border-l-2 text-gray-500`}
                 >
                     {link.icon}
                 </Link>
