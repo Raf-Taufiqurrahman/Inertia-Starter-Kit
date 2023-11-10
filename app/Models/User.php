@@ -59,10 +59,15 @@ class User extends Authenticatable
 
     public function getPermissions()
     {
-        return $this->getAllPermissions()->mapWithKeys(function($query){
+        return $this->getAllPermissions()->mapWithKeys(function($permission){
             return [
-                $query['name'] = true,
+                $permission['name'] => true
             ];
         });
+    }
+
+    public function getSuperAdmin()
+    {
+        return $this->hasRole('super-admin');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Apps\DashboardController;
 use App\Http\Controllers\Apps\PermissionController;
 use App\Http\Controllers\Apps\RoleController;
 use App\Http\Controllers\Apps\UserController;
@@ -17,13 +18,13 @@ use Inertia\Inertia;
 |
 */
 
+// route login page
 Route::get('/', fn() => inertia('Auth/Login'));
 
-Route::get('/apps/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+// route apps group
 Route::group(['as' => 'apps.', 'prefix' => 'apps', 'middleware' => ['auth']], function(){
+    // dashboard route
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
     // permission route
     Route::get('/permissions', PermissionController::class)->name('permissions.index');
     // role route

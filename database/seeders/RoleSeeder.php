@@ -22,7 +22,7 @@ class RoleSeeder extends Seeder
 
         // assign a permissions to a access role
         $user_group->givePermissionTo($user_permissions);
-        
+
         // get all permissions data where name like roles
         $role_permissions = Permission::where('name', 'like', '%roles%')->get();
 

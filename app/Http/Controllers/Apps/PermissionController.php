@@ -8,6 +8,16 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
+        /**
+     * __construct
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('permission:permissions-access');
+    }
+
     /**
      * Handle the incoming request.
      */

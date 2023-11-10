@@ -13,13 +13,28 @@ use Spatie\Permission\Models\Permission;
 class RoleController extends Controller
 {
     /**
+     * __construct
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('permission:roles-access')->only('index');
+        $this->middleware('permission:roles-create')->only('create');
+        $this->middleware('permission:roles-update')->only('edit');
+        $this->middleware('permission:roles-delete')->only('destroy');
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
         // get all roles data
         $roles = Role::query()
-            ->with('permissions')
+            ->with(['permissions' => function($query){
+                $query->select('name')->orderBy('name');
+            }])
             ->when($request->search, fn($query) => $query->where('name', 'like', '%'. $request->search .'%'))
             ->latest()
             ->paginate(7);

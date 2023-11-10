@@ -1,26 +1,27 @@
-import React from 'react'
 import LinkItem from './LinkItem'
-import { IconBrandReact, IconDashboard, IconUserBolt, IconUserCheck, IconUsers } from '@tabler/icons-react'
+import hasAnyPermission from '@/Utils/Permissions'
+import { IconBrandReact, IconLayout2, IconUserBolt, IconUserCheck, IconUsers } from '@tabler/icons-react'
 import { usePage } from '@inertiajs/react'
+import React from 'react'
 export default function Sidebar({ isSidebarOpen }) {
 
     // destruct auth from props
-    const { auth} = usePage().props;
+    const { auth } = usePage().props;
 
     // define array links
     const links = [
         {
             title : 'DASHBOARD',
             details : [
-                {title: 'Dashboard', href: '/apps/dashboard', icon: <IconBrandReact strokeWidth={'1.5'} size={'20'}/>},
+                {title: 'Dashboard', href: '/apps/dashboard', icon: <IconLayout2 strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['dashboard-access'])},
             ]
         },
         {
             title: 'USER MANAGEMENT',
             details: [
-                {title: 'Users', href: '/apps/users', icon: <IconUsers strokeWidth={'1.5'} size={'20'}/>},
-                {title: 'Roles', href: '/apps/roles', icon: <IconUserCheck strokeWidth={'1.5'} size={'20'}/>},
-                {title: 'Permissions', href: '/apps/permissions', icon: <IconUserBolt strokeWidth={'1.5'} size={'20'}/>},
+                {title: 'Users', href: '/apps/users', icon: <IconUsers strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['users-access'])},
+                {title: 'Roles', href: '/apps/roles', icon: <IconUserCheck strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['roles-access'])},
+                {title: 'Permissions', href: '/apps/permissions', icon: <IconUserBolt strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['permissions-access'])},
             ]
         },
     ]
@@ -47,7 +48,7 @@ export default function Sidebar({ isSidebarOpen }) {
                                 <div className='uppercase text-xs font-semibold py-2 text-gray-700'>
                                     {link.title}
                                 </div>
-                                {link.details.map((detail, x) => <LinkItem isSidebarOpen={isSidebarOpen} link={detail} key={x}/>)}
+                                {link.details.map((detail, x) =>  <LinkItem isSidebarOpen={isSidebarOpen} link={detail} key={x}/>)}
                             </div>
                         ))}
                     </div>

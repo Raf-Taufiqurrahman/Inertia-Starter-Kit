@@ -19,15 +19,17 @@ export default function ActionButton({ type, title, url, id }) {
             cancelButtonText: 'Nope'
         }).then((result) => {
             if (result.isConfirmed) {
-                destroy(`${url}/${id}`)
-
-                toast.success('Data successfully deleted!',{
-                    icon: '👏',
-                    style: {
-                        borderRadius: '10px',
-                        background: '#333',
-                        color: '#fff',
-                    },
+                destroy(`${url}/${id}`, {
+                    onSuccess: () => {
+                        toast.success('Data successfully deleted!',{
+                            icon: '👏',
+                            style: {
+                                borderRadius: '10px',
+                                background: '#333',
+                                color: '#fff',
+                            },
+                        })
+                    }
                 })
             }
         })

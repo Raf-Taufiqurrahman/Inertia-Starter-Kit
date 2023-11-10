@@ -10,6 +10,19 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     /**
+     * __construct
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('permission:users-access')->only('index');
+        $this->middleware('permission:users-create')->only('create');
+        $this->middleware('permission:users-update')->only('edit');
+        $this->middleware('permission:users-delete')->only('destroy');
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
