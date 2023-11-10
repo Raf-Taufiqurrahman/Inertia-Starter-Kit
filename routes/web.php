@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Apps\PermissionController;
+use App\Http\Controllers\Apps\RoleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -24,6 +25,8 @@ Route::get('/apps/dashboard', function () {
 Route::group(['as' => 'apps.', 'prefix' => 'apps', 'middleware' => ['auth']], function(){
     // permission route
     Route::get('/permissions', PermissionController::class)->name('permissions.index');
+    // role route
+    Route::resource('/roles', RoleController::class);
 });
 
 require __DIR__.'/auth.php';

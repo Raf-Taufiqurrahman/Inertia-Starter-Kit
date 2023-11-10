@@ -13,7 +13,7 @@ export default function Index() {
 
     return (
         <>
-            <Head title='Data Akses'/>
+            <Head title='Data Permissions'/>
             <div className='mb-5'>
                 <Search
                     url={'/apps/permissions'}

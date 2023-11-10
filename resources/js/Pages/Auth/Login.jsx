@@ -52,12 +52,12 @@ export default function Login() {
                 </div>
                 <div className='flex flex-wrap items-center gap-2'>
                     <Button
-                        className={'bg-teal-600 shadow shadow-teal-500'}
+                        className={'bg-teal-600 shadow shadow-teal-500 text-white'}
                         icon={<IconCheck size={'20'} strokeWidth={'1.5'}/>}
                         label={'Login'}
                     />
                     <Button
-                        className={'bg-sky-600 shadow shadow-sky-500'}
+                        className={'bg-sky-600 shadow shadow-sky-500 text-white'}
                         icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
                         label={'Daftar'}
                         type={'link'}

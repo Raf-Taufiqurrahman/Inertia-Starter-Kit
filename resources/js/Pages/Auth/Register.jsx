@@ -76,12 +76,12 @@ export default function Register() {
                 </div>
                 <div className='flex flex-wrap items-center gap-2 mt-8'>
                     <Button
-                        className={'bg-sky-600 shadow shadow-sky-500'}
+                        className={'bg-sky-600 shadow shadow-sky-500 text-white'}
                         icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
                         label={'Daftar'}
                     />
                     <Button
-                        className={'bg-gray-600 shadow shadow-gray-500'}
+                        className={'bg-gray-600 shadow shadow-gray-500 text-white'}
                         icon={<IconUser size={'20'} strokeWidth={'1.5'}/>}
                         label={'Sudah Punya Akun'}
                         type={'link'}

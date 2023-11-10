@@ -20,6 +20,9 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@tabler/icons-react": "^2.40.0"
+        "@tabler/icons-react": "^2.40.0",
+        "react-hot-toast": "^2.4.1",
+        "react-select": "^5.8.0",
+        "sweetalert2": "^11.9.0"
     }
 }
