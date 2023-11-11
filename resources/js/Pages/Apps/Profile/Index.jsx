@@ -34,8 +34,7 @@ export default function Index() {
                         background: '#333',
                         color: '#fff',
                     },
-                }),
-                reset('password')
+                })
             }
         })
     }
@@ -43,17 +42,17 @@ export default function Index() {
     return (
         <>
             <Head title='Profile'/>
-            <div className='flex flex-row items-start justify-center gap-6'>
-                <div className='w-1/4'>
-                    <div className='mx-auto w-full max-w-xs bg-white rounded-lg flex flex-col items-center justify-center text-center px-6 py-4'>
+            <div className='flex flex-col lg:flex-row items-start justify-center gap-6'>
+                <div className='w-full lg:w-1/4'>
+                    <div className='w-full md:max-w-xs mx-auto bg-white rounded-lg flex flex-col items-center justify-center text-center px-6 py-4'>
                         <img src={user.avatar} className='rounded-full w-20 h-20'/>
                         <div className='mt-5'>
-                            <div className='font-bold'>{user.name}</div>
-                            <div className='text-sm text-gray-500'>{user.email}</div>
+                            <div className='font-bold text-sm lg:text-base line-clamp-1'>{user.name}</div>
+                            <div className='text-xs text-gray-500 line-clamp-1'>{user.email}</div>
                         </div>
                     </div>
                 </div>
-                <div className='w-3/4'>
+                <div className='w-full lg:w-3/4'>
                     <Card
                         title={'Profile'}
                         icon={<IconUser strokeWidth={'1.5'} size={'20'}/>}

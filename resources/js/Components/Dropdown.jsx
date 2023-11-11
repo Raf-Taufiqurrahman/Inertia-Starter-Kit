@@ -17,16 +17,26 @@ export default function Dropdown({ auth, isMobile }) {
     const links = [
         {
             title : 'DASHBOARD',
+            permissions: hasAnyPermission(['dashboard-access']),
             details : [
                 {title: 'Dashboard', href: '/apps/dashboard', icon: <IconLayout2 strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['dashboard-access'])},
             ]
         },
         {
             title: 'USER MANAGEMENT',
+            permissions: hasAnyPermission(['users-access']) || hasAnyPermission(['roles-access']) || hasAnyPermission(['permissions-access']),
             details: [
                 {title: 'Users', href: '/apps/users', icon: <IconUsers strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['users-access'])},
                 {title: 'Roles', href: '/apps/roles', icon: <IconUserCheck strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['roles-access'])},
                 {title: 'Permissions', href: '/apps/permissions', icon: <IconUserBolt strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['permissions-access'])},
+            ]
+        },
+        {
+            title: 'OTHER',
+            permissions: true,
+            details: [
+                {title: 'Profile', href: '/apps/profile', icon: <IconUserCog strokeWidth={'1.5'} size={'20'}/>, permissions: true},
+                {title: 'Logout', href: '/apps/roles', icon: <IconLogout strokeWidth={'1.5'} size={'20'}/>, permissions: true},
             ]
         },
     ]
@@ -96,9 +106,11 @@ export default function Dropdown({ auth, isMobile }) {
                             <div className='py-1 w-full flex flex-col overflow-y-auto'>
                                 {links.map((link, i) => (
                                     <div className='py-2' key={i}>
-                                        <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
-                                            {link.title}
-                                        </div>
+                                        {link.permissions === true &&
+                                            <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
+                                                {link.title}
+                                            </div>
+                                        }
                                         {link.details.map((detail, x) =>  (
                                             <LinkItem isSidebarOpen={true} link={detail} key={x} onClick={() => setIsToggle(!isToggle)}/>
                                         ))}

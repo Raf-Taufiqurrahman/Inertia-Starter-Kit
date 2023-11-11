@@ -12,7 +12,7 @@ export default function InputGroup({label, icon, type, placeholder, errors, ...p
                 </span>
                 <input
                     type={type}
-                    className='w-full border  border-gray-200 bg-gray-100 rounded-r-md sm:text-sm py-2 px-3 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:border-teal-500'
+                    className='w-full border  border-gray-200 bg-gray-100 rounded-r-md sm:text-sm py-2 px-3 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:border-sky-500'
                     placeholder={placeholder}
                     {...props}
                     />

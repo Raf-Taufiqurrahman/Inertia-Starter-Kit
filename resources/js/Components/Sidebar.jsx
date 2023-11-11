@@ -12,12 +12,14 @@ export default function Sidebar({ isSidebarOpen }) {
     const links = [
         {
             title : 'DASHBOARD',
+            permissions: hasAnyPermission(['dashboard-access']),
             details : [
                 {title: 'Dashboard', href: '/apps/dashboard', icon: <IconLayout2 strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['dashboard-access'])},
             ]
         },
         {
             title: 'USER MANAGEMENT',
+            permissions: hasAnyPermission(['users-access']) || hasAnyPermission(['roles-access']) || hasAnyPermission(['permissions-access']),
             details: [
                 {title: 'Users', href: '/apps/users', icon: <IconUsers strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['users-access'])},
                 {title: 'Roles', href: '/apps/roles', icon: <IconUserCheck strokeWidth={'1.5'} size={'20'}/>, permissions: hasAnyPermission(['roles-access'])},
@@ -36,7 +38,7 @@ export default function Sidebar({ isSidebarOpen }) {
                         </div>
                     </div>
                     <div className='w-full px-6 py-3 flex items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
-                        <img src={auth.user.avatar} className='w-12 h-12 rounded-full'/>
+                        <img src={auth.user.avatar} className='w-12 h-12 rounded-full border border-sky-500'/>
                         <div className='flex flex-col gap-0.5'>
                             <div className='text-gray-700 text-sm'>{auth.user.name}</div>
                             <div className='text-gray-400 text-xs'>{auth.user.email}</div>
@@ -45,9 +47,11 @@ export default function Sidebar({ isSidebarOpen }) {
                     <div className='px-6 py-1 w-full flex flex-col overflow-y-auto'>
                         {links.map((link, i) => (
                             <div className='py-2' key={i}>
-                                <div className='uppercase text-xs font-semibold py-2 text-gray-700'>
-                                    {link.title}
-                                </div>
+                                {link.permissions === true &&
+                                    <div className='uppercase text-xs font-semibold py-2 text-gray-700'>
+                                        {link.title}
+                                    </div>
+                                }
                                 {link.details.map((detail, x) =>  <LinkItem isSidebarOpen={isSidebarOpen} link={detail} key={x}/>)}
                             </div>
                         ))}
@@ -59,7 +63,7 @@ export default function Sidebar({ isSidebarOpen }) {
                         <IconBrandReact size={'20'} strokeWidth={'1.5'} className='text-gray-700'/>
                     </div>
                     <div className='w-full px-6 py-3 flex justify-center items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
-                        <img src={auth.user.avatar} className='w-8 h-8 rounded-full'/>
+                        <img src={auth.user.avatar} className='w-8 h-8 rounded-full border border-sky-500'/>
                     </div>
                     <div className='px-6 py-1 w-full flex flex-col overflow-y-auto items-center justify-center gap-2'>
                         {links.map((link, i) => (

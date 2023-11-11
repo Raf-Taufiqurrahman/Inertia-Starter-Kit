@@ -62,6 +62,6 @@ class ProfileController extends Controller
             ]);
 
         // render view
-        return back();
+        return to_route('apps.dashboard');
     }
 }
