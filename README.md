@@ -38,34 +38,34 @@ password : password
 <table>
   <tr>
         <td> 
-            <img src="https://imgur.com/JWOVMRa.png" alt="login">
+            <img src="https://imgur.com/si6hT7R.png" alt="login">
         </td>
         <td>
-            <img src="https://imgur.com/qHm9CTP.png" alt="register">
+            <img src="https://imgur.com/58xFK5a.png" alt="register">
         </td>
    </tr>
     <tr>    
         <td>
-            <img src="https://imgur.com/KtW8Vq0.png" alt="dashboard">
+            <img src="https://imgur.com/DHH16C0.png" alt="dashboard">
         </td>
         <td>
-             <img src="https://imgur.com/asynfrP.png" alt="users">
+             <img src="https://imgur.com/eTdAO3V.png" alt="users">
         </td>
     </tr>
     <tr>
         <td> 
-            <img src="https://imgur.com/Ud9prbc.png" alt="roles">
+            <img src="https://imgur.com/Mk3ipGO.png" alt="roles">
         </td>
         <td>
-           <img src="https://imgur.com/8uElkyc.png" alt="permissions">
+           <img src="https://imgur.com/cjJP1UI.png" alt="permissions">
         </td>
    </tr> 
    <tr>
        <td>
-           <img src="https://imgur.com/sYZ4G29.png" alt="mobile">
+           <img src="https://imgur.com/i6ewQZw.png" alt="mobile">
        </td>
         <td>
-           <img src="https://imgur.com/g6Ye8Tz.png" alt="mobile-1">
+           <img src="https://imgur.com/uiu8nMb.png" alt="mobile-1">
        </td>
    </tr>
 </table>
