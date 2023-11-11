@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Apps\DashboardController;
 use App\Http\Controllers\Apps\PermissionController;
+use App\Http\Controllers\Apps\ProfileController;
 use App\Http\Controllers\Apps\RoleController;
 use App\Http\Controllers\Apps\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,11 @@ Route::group(['as' => 'apps.', 'prefix' => 'apps', 'middleware' => ['auth']], fu
     Route::resource('/roles', RoleController::class);
     // user route
     Route::resource('/users', UserController::class);
+    // profile route
+    Route::controller(ProfileController::class)->as('profile.')->group(function(){
+        Route::get('/profile', 'index');
+        Route::put('/profile/{user}', 'update');
+    });
 });
 
 require __DIR__.'/auth.php';

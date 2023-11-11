@@ -30,12 +30,12 @@ export default function Sidebar({ isSidebarOpen }) {
         <div className={`${isSidebarOpen ? 'w-[260px]' : 'w-[100px]'} bg-white min-h-screen overflow-y-auto hidden md:block relative z-10 border-r transition-all duration-300`}>
             {isSidebarOpen ?
                 <>
-                    <div className='flex justify-center items-center px-6 py-3 h-16 border-b'>
+                    <div className='flex justify-center items-center px-6 py-2 h-16'>
                         <div className='text-2xl font-bold text-gray-700 text-center leading-loose tracking-wider'>
                             STARTER
                         </div>
                     </div>
-                    <div className='w-full px-6 py-3 flex items-center gap-4 border-b bg-gray-100'>
+                    <div className='w-full px-6 py-3 flex items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
                         <img src={auth.user.avatar} className='w-12 h-12 rounded-full'/>
                         <div className='flex flex-col gap-0.5'>
                             <div className='text-gray-700 text-sm'>{auth.user.name}</div>
@@ -55,10 +55,10 @@ export default function Sidebar({ isSidebarOpen }) {
                 </>
                 :
                 <>
-                   <div className='flex justify-center items-center px-6 py-3 h-16 border-b'>
+                   <div className='flex justify-center items-center px-6 py-2 h-16'>
                         <IconBrandReact size={'20'} strokeWidth={'1.5'} className='text-gray-700'/>
                     </div>
-                    <div className='w-full px-6 py-3 flex justify-center items-center gap-4 border-b bg-gray-100'>
+                    <div className='w-full px-6 py-3 flex justify-center items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
                         <img src={auth.user.avatar} className='w-8 h-8 rounded-full'/>
                     </div>
                     <div className='px-6 py-1 w-full flex flex-col overflow-y-auto items-center justify-center gap-2'>

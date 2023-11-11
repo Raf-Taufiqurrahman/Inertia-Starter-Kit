@@ -50,11 +50,18 @@ export default function Navbar({ toggleSidebar }) {
                 { title: 'Data Roles', href: '/apps/roles', active: url.startsWith('/apps/roles') ? true : false },
                 { title: 'Data Permissions', href: '/apps/permissions', active: url.startsWith('/apps/permissions') ? true : false },
             ]
+        },
+        {
+            title: 'Other',
+            active: url.startsWith('/apps/profile') ? true : false,
+            details: [
+                { title: 'Profile', href: '/apps/profile', active: url.startsWith('/apps/profile') ? true : false },
+            ]
         }
     ]
 
     return (
-        <div className='py-2 px-4 md:px-8 h-16 flex justify-between items-center border-b bg-white'>
+        <div className='py-8 px-4 md:px-8 h-16 flex justify-between items-center border-b bg-white'>
             <div className='flex items-center gap-4'>
                 <button type='button' onClick={toggleSidebar} className='hidden md:block'>
                     <IconAlignLeft size={'20'} strokeWidth={'1.5'}/>

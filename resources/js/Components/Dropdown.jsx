@@ -3,7 +3,7 @@ import LinkItem from './LinkItem'
 import hasAnyPermission from '@/Utils/Permissions'
 import { Menu, Transition  } from '@headlessui/react'
 import { Link } from '@inertiajs/react'
-import { IconLogout, IconX, IconBrandReact, IconLayout2, IconUserBolt, IconUserCheck, IconUsers  } from '@tabler/icons-react'
+import { IconLogout, IconX, IconLayout2, IconUserBolt, IconUserCheck, IconUsers, IconUserCog  } from '@tabler/icons-react'
 import { useForm } from '@inertiajs/react'
 export default function Dropdown({ auth, isMobile }) {
 
@@ -43,7 +43,7 @@ export default function Dropdown({ auth, isMobile }) {
             {isMobile === false ?
                 <Menu className='relative z-50' as="div">
                     <Menu.Button className='flex items-center rounded-full'>
-                        <img src={auth.user.avatar} alt={auth.user.name} className='w-8 h-8 rounded-full border border-sky-500'/>
+                        <img src={auth.user.avatar} alt={auth.user.name} className='w-10 h-10 rounded-full border border-sky-500'/>
                     </Menu.Button>
                     <Transition
                         enter="transition duration-100 ease-out"
@@ -53,13 +53,20 @@ export default function Dropdown({ auth, isMobile }) {
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Menu.Items className='absolute bg-white rounded-lg w-48 border border-gray-100 mt-2 py-1 right-0 z-50'>
-                            <Menu.Item>
-                                <button onClick={logout} className='px-3 py-1.5 rounded-lg text-sm text-gray-700 flex items-center gap-2 hover:text-sky-700'>
-                                    <IconLogout className='w-5 h-5' strokeWidth={'1.2'}/>
-                                    <span>Logout</span>
-                                </button>
-                            </Menu.Item>
+                        <Menu.Items className='absolute bg-white rounded-lg w-48 border border-gray-100 mt-2 py-2 right-0 z-50'>
+                            <div className='flex flex-col gap-1.5 divide-y'>
+                                <Menu.Item>
+                                    <Link href="/apps/profile" className='px-3 py-1.5 text-sm text-gray-700 flex items-center gap-2 hover:text-sky-700'>
+                                        <IconUserCog strokeWidth={'1.5'} size={'20'}/> Profile
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <button onClick={logout} className='px-3 py-1.5 text-sm text-gray-700 flex items-center gap-2 hover:text-sky-700'>
+                                        <IconLogout strokeWidth={'1.5'} size={'20'}/>
+                                        Logout
+                                    </button>
+                                </Menu.Item>
+                            </div>
                         </Menu.Items>
                     </Transition>
                 </Menu>
