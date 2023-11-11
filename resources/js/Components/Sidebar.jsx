@@ -47,7 +47,12 @@ export default function Sidebar({ isSidebarOpen }) {
                     <div className='px-6 py-1 w-full flex flex-col overflow-y-auto'>
                         {links.map((link, i) => (
                             <div className='py-2' key={i}>
-                                {link.permissions === true &&
+                                {auth.super === true ?
+                                    <div className='uppercase text-xs font-semibold py-2 text-gray-700'>
+                                        {link.title}
+                                    </div>
+                                    :
+                                    link.permissions === true &&
                                     <div className='uppercase text-xs font-semibold py-2 text-gray-700'>
                                         {link.title}
                                     </div>

@@ -98,7 +98,7 @@ export default function Dropdown({ auth, isMobile }) {
                                     </div>
                                 </div>
                                 <div>
-                                    <button className='flex items-center' onClick={() => setIsToggle(!isToggle)}>
+                                    <button className='flex items-center cursor-pointer' onClick={() => setIsToggle(!isToggle)}>
                                         <IconX size={'20'} strokeWidth={'1.5'}/>
                                     </button>
                                 </div>
@@ -106,7 +106,12 @@ export default function Dropdown({ auth, isMobile }) {
                             <div className='py-1 w-full flex flex-col overflow-y-auto'>
                                 {links.map((link, i) => (
                                     <div className='py-2' key={i}>
-                                        {link.permissions === true &&
+                                        {auth.super === true ?
+                                            <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
+                                                {link.title}
+                                            </div>
+                                            :
+                                            link.permissions === true &&
                                             <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
                                                 {link.title}
                                             </div>
