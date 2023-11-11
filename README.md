@@ -35,14 +35,40 @@ password : password
   
 
 ## OVERVIEW APLIKASI
-![Imgur](https://imgur.com/JWOVMRa.png)
-![Imgur](https://imgur.com/qHm9CTP.png)
-![Imgur](https://imgur.com/KtW8Vq0.png)
-![Imgur](https://imgur.com/asynfrP.png)
-![Imgur](https://imgur.com/Ud9prbc.png)
-![Imgur](https://imgur.com/8uElkyc.png)
-![Imgur](https://imgur.com/sYZ4G29.png)
-![Imgur](https://imgur.com/g6Ye8Tz.png)
+<table>
+  <tr>
+        <td> 
+            <img src="https://imgur.com/JWOVMRa.png" alt="login">
+        </td>
+        <td>
+            <img src="https://imgur.com/qHm9CTP.png" alt="register">
+        </td>
+   </tr>
+    <tr>    
+        <td>
+            <img src="https://imgur.com/KtW8Vq0.png" alt="dashboard">
+        </td>
+        <td>
+             <img src="https://imgur.com/asynfrP.png" alt="users">
+        </td>
+    </tr>
+    <tr>
+        <td> 
+            <img src="https://imgur.com/Ud9prbc.png" alt="roles">
+        </td>
+        <td>
+           <img src="https://imgur.com/8uElkyc.png" alt="permissions">
+        </td>
+   </tr> 
+   <tr>
+       <td>
+           <img src="https://imgur.com/sYZ4G29.png" alt="mobile">
+       </td>
+        <td>
+           <img src="https://imgur.com/g6Ye8Tz.png" alt="mobile-1">
+       </td>
+   </tr>
+</table>
 
 
 ## LISENSI
