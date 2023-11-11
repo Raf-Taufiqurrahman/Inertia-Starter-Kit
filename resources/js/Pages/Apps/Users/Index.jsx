@@ -25,6 +25,7 @@ export default function Index() {
                             icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
                             className={'bg-white text-gray-700'}
                             href={'/apps/users/create'}
+                            added={true}
                         />
                     </div>
                     <div className='w-full'>

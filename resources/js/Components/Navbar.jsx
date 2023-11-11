@@ -1,15 +1,37 @@
-import { Link, usePage } from '@inertiajs/react'
+import { usePage, } from '@inertiajs/react'
 import { IconAlignLeft, IconBell, IconChevronRight } from '@tabler/icons-react'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Dropdown from './Dropdown'
 
-export default function Navbar({toggleSidebar}) {
+export default function Navbar({ toggleSidebar }) {
 
     // destruct auth from props
     const { auth } = usePage().props;
 
     // destruct url from usePage
     const { url } = usePage();
+
+    // define state isMobile
+    const [isMobile, setIsMobile] = useState(false);
+
+    // define useEffect
+    useEffect(() => {
+        // define handle resize window
+        const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+        };
+
+        // define event listener
+        window.addEventListener('resize', handleResize);
+
+        // call handle resize window
+        handleResize();
+
+        // remove event listener
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
     // define array links
     const links = [
@@ -48,9 +70,7 @@ export default function Navbar({toggleSidebar}) {
                     </div>
                 ))}
             </div>
-            <div>
-                <Dropdown auth={auth}/>
-            </div>
+            <Dropdown auth={auth} isMobile={isMobile}/>
         </div>
     )
 }
