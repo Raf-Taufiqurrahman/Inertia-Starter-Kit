@@ -36,7 +36,6 @@ export default function Dropdown({ auth, isMobile }) {
             permissions: true,
             details: [
                 {title: 'Profile', href: '/apps/profile', icon: <IconUserCog strokeWidth={'1.5'} size={'20'}/>, permissions: true},
-                {title: 'Logout', href: '/apps/roles', icon: <IconLogout strokeWidth={'1.5'} size={'20'}/>, permissions: true},
             ]
         },
     ]
@@ -121,6 +120,11 @@ export default function Dropdown({ auth, isMobile }) {
                                         ))}
                                     </div>
                                 ))}
+                                <button
+                                    onClick={logout}
+                                    className='flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-200 hover:text-sky-500 capitalize hover:cursor-pointer text-sm'>
+                                    <IconLogout size={'20'} strokeWidth={'1.5'}/> Logout
+                                </button>
                             </div>
                         </div>
                     }
