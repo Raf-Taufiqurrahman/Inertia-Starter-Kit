@@ -70,9 +70,9 @@ export default function Sidebar({ isSidebarOpen }) {
                     <div className='w-full px-6 py-3 flex justify-center items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
                         <img src={auth.user.avatar} className='w-8 h-8 rounded-full border border-sky-500'/>
                     </div>
-                    <div className='px-6 py-1 w-full flex flex-col overflow-y-auto items-center justify-center gap-2'>
+                    <div className='w-full flex flex-col overflow-y-auto items-center justify-center'>
                         {links.map((link, i) => (
-                            <div className='py-2 flex flex-col gap-4 border-b border-dashed' key={i}>
+                            <div className='flex flex-col min-w-full items-center' key={i}>
                                 {link.details.map((detail, x) => <LinkItem isSidebarOpen={isSidebarOpen} link={detail} key={x}/>)}
                             </div>
                         ))}

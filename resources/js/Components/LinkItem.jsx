@@ -15,7 +15,7 @@ export default function LinkItem({ link, isSidebarOpen, logout, ...props }) {
                     isSidebarOpen ?
                         <Link
                             href={link.href}
-                            className={`${url.startsWith(link.href) ? ' border-l-2 border-l-sky-300  text-sky-600 bg-sky-100' : '' } flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-200 hover:text-sky-500 capitalize hover:cursor-pointer text-sm`}
+                            className={`${url.startsWith(link.href) ? ' border-l-2 border-l-sky-300  text-sky-600 bg-sky-100' : '' } flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-300 hover:text-sky-500 capitalize hover:cursor-pointer text-sm`}
                             {...props}
                         >
                             {link.icon} {link.title}
@@ -23,7 +23,7 @@ export default function LinkItem({ link, isSidebarOpen, logout, ...props }) {
                     :
                         <Link
                             href={link.href}
-                            className={`px-3 py-1 ${url.startsWith(link.href) ? 'border-l-2 bg-sky-100 border-l-sky-200 text-sky-600' : ''} hover:bg-sky-100 hover:border-l-sky-200 hover:border-l-2 text-gray-500`}
+                            className={` ${url.startsWith(link.href) ? 'border-sky-300 border-r-2 bg-sky-50 text-sky-600' : ''}  text-gray-500 min-w-full flex justify-center py-3`}
                             {...props}
                         >
                             {link.icon}
@@ -33,7 +33,7 @@ export default function LinkItem({ link, isSidebarOpen, logout, ...props }) {
                     isSidebarOpen ?
                         <Link
                             href={link.href}
-                            className={`${url.startsWith(link.href) ? ' border-l-2 border-l-sky-300  text-sky-600 bg-sky-100' : '' } flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-200 hover:text-sky-500 capitalize hover:cursor-pointer text-sm`}
+                            className={`${url.startsWith(link.href) ? ' border-l-2 border-l-sky-300  text-sky-600 bg-sky-100' : '' } flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-300 hover:text-sky-500 capitalize hover:cursor-pointer text-sm`}
                             {...props}
                         >
                             {link.icon} {link.title}
@@ -41,7 +41,7 @@ export default function LinkItem({ link, isSidebarOpen, logout, ...props }) {
                     :
                         <Link
                             href={link.href}
-                            className={`px-3 py-1 ${url.startsWith(link.href) ? 'border-l-2 bg-sky-100 border-l-sky-200 text-sky-600' : ''} hover:bg-sky-100 hover:border-l-sky-200 hover:border-l-2 text-gray-500`}
+                            className={` ${url.startsWith(link.href) ? 'border-sky-300 border-r-2 bg-sky-50 text-sky-600' : ''}  text-gray-500 min-w-full flex justify-center py-3`}
                             {...props}
                         >
                             {link.icon}

@@ -81,53 +81,51 @@ export default function Dropdown({ auth, isMobile }) {
                 </Menu>
                 :
                 <>
-                    <button className="flex items-center" onClick={() => setIsToggle(!isToggle)}>
-                        <img src={auth.user.avatar} alt={auth.user.name} className='w-8 h-8 rounded-full border border-sky-500'/>
+                    <button className="flex items-center group" onClick={() => setIsToggle(!isToggle)}>
+                        <img src={auth.user.avatar} alt={auth.user.name} className='w-8 h-8 rounded-full border border-sky-500 group-hover:shadow group-hover:shadow-sky-700'/>
                     </button>
-                    {isToggle &&
-                        <div className='fixed top-0 right-0 z-50 w-[300px] h-full ease-in-out transition-all duration-1000 transform bg-white border-l'>
-                            <div className='py-2 px-4 h-16 border-b flex items-center justify-between'>
-                                <div className="flex items-center gap-2">
-                                    <img src={auth.user.avatar} alt={auth.user.name} className='w-10 h-10 rounded-full border border-sky-500'/>
-                                    <div>
-                                        <div className='text-sm font-semibold'>
-                                            {auth.user.name}
-                                        </div>
-                                        <div className='text-xs text-gray-500'>{auth.user.email}</div>
-                                    </div>
-                                </div>
+                    <div className={`${isToggle ?'-translate-x-0 opacity-100' : 'translate-x-full'} fixed top-0 right-0 z-50 w-[300px] h-full transition-all duration-300 transform bg-white border-l`}>
+                        <div className='py-2 px-4 h-16 border-b flex items-center justify-between'>
+                            <div className="flex items-center gap-2">
+                                <img src={auth.user.avatar} alt={auth.user.name} className='w-10 h-10 rounded-full border border-sky-500'/>
                                 <div>
-                                    <button className='flex items-center cursor-pointer' onClick={() => setIsToggle(!isToggle)}>
-                                        <IconX size={'20'} strokeWidth={'1.5'}/>
-                                    </button>
+                                    <div className='text-sm font-semibold'>
+                                        {auth.user.name}
+                                    </div>
+                                    <div className='text-xs text-gray-500'>{auth.user.email}</div>
                                 </div>
                             </div>
-                            <div className='py-1 w-full flex flex-col overflow-y-auto'>
-                                {links.map((link, i) => (
-                                    <div className='py-2' key={i}>
-                                        {auth.super === true ?
-                                            <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
-                                                {link.title}
-                                            </div>
-                                            :
-                                            link.permissions === true &&
-                                            <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
-                                                {link.title}
-                                            </div>
-                                        }
-                                        {link.details.map((detail, x) =>  (
-                                            <LinkItem isSidebarOpen={true} link={detail} key={x} onClick={() => setIsToggle(!isToggle)}/>
-                                        ))}
-                                    </div>
-                                ))}
-                                <button
-                                    onClick={logout}
-                                    className='flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-200 hover:text-sky-500 capitalize hover:cursor-pointer text-sm'>
-                                    <IconLogout size={'20'} strokeWidth={'1.5'}/> Logout
+                            <div>
+                                <button className='flex p-2 items-center cursor-pointer hover:rounded-full hover:bg-rose-50 hover:text-rose-300' onClick={() => setIsToggle(!isToggle)}>
+                                    <IconX size={'20'} strokeWidth={'1.5'}/>
                                 </button>
                             </div>
                         </div>
-                    }
+                        <div className='py-1 w-full flex flex-col overflow-y-auto'>
+                            {links.map((link, i) => (
+                                <div className='py-2' key={i}>
+                                    {auth.super === true ?
+                                        <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
+                                            {link.title}
+                                        </div>
+                                        :
+                                        link.permissions === true &&
+                                        <div className='uppercase text-sm font-bold px-2 mb-3 text-gray-700'>
+                                            {link.title}
+                                        </div>
+                                    }
+                                    {link.details.map((detail, x) =>  (
+                                        <LinkItem isSidebarOpen={true} link={detail} key={x} onClick={() => setIsToggle(!isToggle)}/>
+                                    ))}
+                                </div>
+                            ))}
+                            <button
+                                onClick={logout}
+                                className='flex items-center font-medium gap-x-3.5 py-2 px-2.5 text-gray-500 hover:border-l-2 hover:border-l-sky-200 hover:text-sky-500 capitalize hover:cursor-pointer text-sm'>
+                                <IconLogout size={'20'} strokeWidth={'1.5'}/> Logout
+                            </button>
+                        </div>
+                    </div>
                 </>
             }
         </>
