@@ -23,7 +23,7 @@ export default function Index() {
                             label='Add New User'
                             type={'link'}
                             icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
-                            className={'bg-white text-gray-700'}
+                            className={'bg-white text-gray-700 border hover:border-sky-500'}
                             href={'/apps/users/create'}
                             added={true}
                         />

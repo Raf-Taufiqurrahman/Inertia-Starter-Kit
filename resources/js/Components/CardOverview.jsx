@@ -13,7 +13,7 @@ export default function CardOverview({title, icon, subtitle, className, children
                         <div className='text-xs text-gray-500'>{subtitle}</div>
                     </div>
                 </div>
-                <div className='font-semibold text-lg font-mono'>
+                <div className='font-semibold text-lg font-mono p-2'>
                     {children}
                 </div>
             </div>

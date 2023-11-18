@@ -123,12 +123,12 @@ export default function Edit() {
                         <Button
                             label={'Save Data'}
                             icon={<IconPencilPlus strokeWidth={'1.5'} size={'20'}/>}
-                            className={'bg-teal-700 text-white border-teal-500'}
+                            className={'bg-teal-200 text-teal-500 border border-teal-300 hover:border-teal-500'}
                         />
                         <Button
                             label={'Cancel'}
                             icon={<IconPencilX strokeWidth={'1.5'} size={'20'}/>}
-                            className={'bg-rose-700 text-white border-rose-500'}
+                            className={'bg-rose-200 text-rose-500 border border-rose-300 hover:border-rose-500'}
                             type={'link'}
                             href={'/apps/users'}
                         />

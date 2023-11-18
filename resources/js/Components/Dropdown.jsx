@@ -65,12 +65,12 @@ export default function Dropdown({ auth, isMobile }) {
                         <Menu.Items className='absolute bg-white rounded-lg w-48 border border-gray-100 mt-2 py-2 right-0 z-50'>
                             <div className='flex flex-col gap-1.5 divide-y'>
                                 <Menu.Item>
-                                    <Link href="/apps/profile" className='px-3 py-1.5 text-sm text-gray-700 flex items-center gap-2 hover:text-sky-700'>
+                                    <Link href="/apps/profile" className='px-3 py-1.5 text-sm text-gray-700 flex items-center gap-2 hover:text-sky-500'>
                                         <IconUserCog strokeWidth={'1.5'} size={'20'}/> Profile
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <button onClick={logout} className='px-3 py-1.5 text-sm text-gray-700 flex items-center gap-2 hover:text-sky-700'>
+                                    <button onClick={logout} className='px-3 py-1.5 text-sm text-gray-700 flex items-center gap-2 hover:text-sky-500'>
                                         <IconLogout strokeWidth={'1.5'} size={'20'}/>
                                         Logout
                                     </button>
@@ -84,7 +84,7 @@ export default function Dropdown({ auth, isMobile }) {
                     <button className="flex items-center group" onClick={() => setIsToggle(!isToggle)}>
                         <img src={auth.user.avatar} alt={auth.user.name} className='w-8 h-8 rounded-full border border-sky-500 group-hover:shadow group-hover:shadow-sky-700'/>
                     </button>
-                    <div className={`${isToggle ?'-translate-x-0 opacity-100' : 'translate-x-full'} fixed top-0 right-0 z-50 w-[300px] h-full transition-all duration-300 transform bg-white border-l`}>
+                    <div className={`${isToggle ?'translate-x-0 opacity-100' : '-translate-x-full'} fixed top-0 left-0 z-50 w-[300px] h-full transition-all duration-300 transform bg-white border-r`}>
                         <div className='py-2 px-4 h-16 border-b flex items-center justify-between'>
                             <div className="flex items-center gap-2">
                                 <img src={auth.user.avatar} alt={auth.user.name} className='w-10 h-10 rounded-full border border-sky-500'/>

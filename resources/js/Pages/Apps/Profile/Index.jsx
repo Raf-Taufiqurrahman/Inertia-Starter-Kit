@@ -97,7 +97,7 @@ export default function Index() {
                                 <Button
                                     label={'Update Profile'}
                                     icon={<IconPencilCheck strokeWidth={'1.5'} size={'20'}/>}
-                                    className={'bg-teal-700 text-white border-teal-500'}
+                                    className={'bg-teal-200 text-teal-500 border border-teal-300 hover:border-teal-500'}
                                 />
                             </div>
                         </form>

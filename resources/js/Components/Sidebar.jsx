@@ -1,6 +1,6 @@
 import LinkItem from './LinkItem'
 import hasAnyPermission from '@/Utils/Permissions'
-import { IconBrandReact, IconLayout2, IconUserBolt, IconUserCheck, IconUsers } from '@tabler/icons-react'
+import { IconComponents, IconLayout2, IconUserBolt, IconUserCheck, IconUsers } from '@tabler/icons-react'
 import { usePage } from '@inertiajs/react'
 import React from 'react'
 export default function Sidebar({ isSidebarOpen }) {
@@ -37,18 +37,18 @@ export default function Sidebar({ isSidebarOpen }) {
                             STARTER
                         </div>
                     </div>
-                    <div className='w-full px-6 py-3 flex items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
+                    <div className='w-full p-3 flex items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
                         <img src={auth.user.avatar} className='w-12 h-12 rounded-full border border-sky-500'/>
                         <div className='flex flex-col gap-0.5'>
                             <div className='text-gray-700 text-sm'>{auth.user.name}</div>
                             <div className='text-gray-400 text-xs'>{auth.user.email}</div>
                         </div>
                     </div>
-                    <div className='px-6 py-1 w-full flex flex-col overflow-y-auto'>
+                    <div className='py-1 w-full flex flex-col overflow-y-auto'>
                         {links.map((link, i) => (
-                            <div className='py-2' key={i}>
+                            <div className='' key={i}>
                                 {auth.super === true ?
-                                    <div className='uppercase text-xs font-semibold py-2 text-gray-700'>
+                                    <div className='uppercase text-xs font-semibold py-2 text-gray-700 px-2'>
                                         {link.title}
                                     </div>
                                     :
@@ -65,7 +65,7 @@ export default function Sidebar({ isSidebarOpen }) {
                 :
                 <>
                    <div className='flex justify-center items-center px-6 py-2 h-16'>
-                        <IconBrandReact size={'20'} strokeWidth={'1.5'} className='text-gray-700'/>
+                        <IconComponents size={'20'} strokeWidth={'1.5'} className='text-gray-700'/>
                     </div>
                     <div className='w-full px-6 py-3 flex justify-center items-center gap-4 border-b bg-sky-50 border-sky-100 border-t'>
                         <img src={auth.user.avatar} className='w-8 h-8 rounded-full border border-sky-500'/>

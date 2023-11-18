@@ -1,6 +1,6 @@
 import AppLayout from '@/Layouts/AppLayout'
 import { Head, usePage } from '@inertiajs/react'
-import { IconCheck, IconDatabaseOff, IconPlus, IconUserCheck } from '@tabler/icons-react'
+import { IconCheck, IconCirclePlus, IconDatabaseOff, IconPlus, IconUserCheck } from '@tabler/icons-react'
 import Table from '@/Components/Table'
 import Pagination from '@/Components/Pagination'
 import React from 'react'
@@ -22,8 +22,8 @@ export default function Index() {
                         <Button
                             label='Add New Role'
                             type={'link'}
-                            icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
-                            className={'bg-white text-gray-700'}
+                            icon={<IconCirclePlus size={'20'} strokeWidth={'1.5'}/>}
+                            className={'bg-white text-gray-700 border hover:border-sky-500'}
                             href={'/apps/roles/create'}
                             added={true}
                         />
