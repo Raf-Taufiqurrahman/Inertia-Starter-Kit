@@ -1,0 +1,247 @@
+{
+  "_ActionButton-987cb1fd.js": {
+    "file": "assets/ActionButton-987cb1fd.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js",
+      "_createReactComponent-762429e4.js"
+    ]
+  },
+  "_AppLayout-dedf3cbe.js": {
+    "file": "assets/AppLayout-dedf3cbe.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_createReactComponent-762429e4.js"
+    ]
+  },
+  "_AuthLayout-742a99a0.js": {
+    "file": "assets/AuthLayout-742a99a0.js",
+    "imports": [
+      "_createReactComponent-762429e4.js",
+      "resources/js/app.jsx"
+    ]
+  },
+  "_Button-fdc24431.js": {
+    "file": "assets/Button-fdc24431.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_IconCheck-577b1e33.js": {
+    "file": "assets/IconCheck-577b1e33.js",
+    "imports": [
+      "_createReactComponent-762429e4.js"
+    ]
+  },
+  "_IconPencilX-e7dbf19b.js": {
+    "file": "assets/IconPencilX-e7dbf19b.js",
+    "imports": [
+      "_createReactComponent-762429e4.js"
+    ]
+  },
+  "_IconPlus-1f8dff00.js": {
+    "file": "assets/IconPlus-1f8dff00.js",
+    "imports": [
+      "_createReactComponent-762429e4.js"
+    ]
+  },
+  "_IconPointFilled-63906df0.js": {
+    "file": "assets/IconPointFilled-63906df0.js",
+    "imports": [
+      "_createReactComponent-762429e4.js"
+    ]
+  },
+  "_Input-81a2a475.js": {
+    "file": "assets/Input-81a2a475.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_MultiSelect-9ed89c86.js": {
+    "file": "assets/MultiSelect-9ed89c86.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_Search-91aad80c.js": {
+    "file": "assets/Search-91aad80c.js",
+    "imports": [
+      "_createReactComponent-762429e4.js",
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js"
+    ]
+  },
+  "_createReactComponent-762429e4.js": {
+    "file": "assets/createReactComponent-762429e4.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Apps/Dashboard/Index.jsx": {
+    "file": "assets/Index-98f1084b.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Dashboard/Index.jsx"
+  },
+  "resources/js/Pages/Apps/Permissions/Index.jsx": {
+    "file": "assets/Index-a1a00f9a.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js",
+      "_Search-91aad80c.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Permissions/Index.jsx"
+  },
+  "resources/js/Pages/Apps/Profile/Index.jsx": {
+    "file": "assets/Index-bfada6a5.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Input-81a2a475.js",
+      "_Button-fdc24431.js",
+      "_AppLayout-dedf3cbe.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Profile/Index.jsx"
+  },
+  "resources/js/Pages/Apps/Roles/Create.jsx": {
+    "file": "assets/Create-5e0744d1.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Button-fdc24431.js",
+      "_Input-81a2a475.js",
+      "_MultiSelect-9ed89c86.js",
+      "_AppLayout-dedf3cbe.js",
+      "_IconPencilX-e7dbf19b.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Roles/Create.jsx"
+  },
+  "resources/js/Pages/Apps/Roles/Edit.jsx": {
+    "file": "assets/Edit-b7f7432f.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Button-fdc24431.js",
+      "_Input-81a2a475.js",
+      "_MultiSelect-9ed89c86.js",
+      "_AppLayout-dedf3cbe.js",
+      "_IconPencilX-e7dbf19b.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Roles/Edit.jsx"
+  },
+  "resources/js/Pages/Apps/Roles/Index.jsx": {
+    "file": "assets/Index-98f583e1.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js",
+      "_Search-91aad80c.js",
+      "_Button-fdc24431.js",
+      "_ActionButton-987cb1fd.js",
+      "_createReactComponent-762429e4.js",
+      "_IconCheck-577b1e33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Roles/Index.jsx"
+  },
+  "resources/js/Pages/Apps/Users/Create.jsx": {
+    "file": "assets/Create-ab374b8c.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Button-fdc24431.js",
+      "_Input-81a2a475.js",
+      "_AppLayout-dedf3cbe.js",
+      "_IconPointFilled-63906df0.js",
+      "_IconPencilX-e7dbf19b.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Users/Create.jsx"
+  },
+  "resources/js/Pages/Apps/Users/Edit.jsx": {
+    "file": "assets/Edit-f53f8436.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js",
+      "_Input-81a2a475.js",
+      "_Button-fdc24431.js",
+      "_IconPointFilled-63906df0.js",
+      "_IconPencilX-e7dbf19b.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Users/Edit.jsx"
+  },
+  "resources/js/Pages/Apps/Users/Index.jsx": {
+    "file": "assets/Index-086487ae.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-dedf3cbe.js",
+      "_Search-91aad80c.js",
+      "_Button-fdc24431.js",
+      "_ActionButton-987cb1fd.js",
+      "_IconPlus-1f8dff00.js",
+      "_IconCheck-577b1e33.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Apps/Users/Index.jsx"
+  },
+  "resources/js/Pages/Auth/Login.jsx": {
+    "file": "assets/Login-c41c3599.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthLayout-742a99a0.js",
+      "_Button-fdc24431.js",
+      "_IconCheck-577b1e33.js",
+      "_createReactComponent-762429e4.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Auth/Login.jsx"
+  },
+  "resources/js/Pages/Auth/Register.jsx": {
+    "file": "assets/Register-0ea53de7.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_AuthLayout-742a99a0.js",
+      "_Button-fdc24431.js",
+      "_createReactComponent-762429e4.js",
+      "_IconPlus-1f8dff00.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Auth/Register.jsx"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-7f73f043.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.jsx": {
+    "css": [
+      "assets/app-7f73f043.css"
+    ],
+    "dynamicImports": [
+      "resources/js/Pages/Apps/Dashboard/Index.jsx",
+      "resources/js/Pages/Apps/Permissions/Index.jsx",
+      "resources/js/Pages/Apps/Profile/Index.jsx",
+      "resources/js/Pages/Apps/Roles/Create.jsx",
+      "resources/js/Pages/Apps/Roles/Edit.jsx",
+      "resources/js/Pages/Apps/Roles/Index.jsx",
+      "resources/js/Pages/Apps/Users/Create.jsx",
+      "resources/js/Pages/Apps/Users/Edit.jsx",
+      "resources/js/Pages/Apps/Users/Index.jsx",
+      "resources/js/Pages/Auth/Login.jsx",
+      "resources/js/Pages/Auth/Register.jsx"
+    ],
+    "file": "assets/app-a8716644.js",
+    "isEntry": true,
+    "src": "resources/js/app.jsx"
+  }
+}

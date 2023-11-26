@@ -2,7 +2,7 @@ import AuthCard from '@/Components/AuthCard'
 import Button from '@/Components/Button'
 import InputGroup from '@/Components/InputGroup'
 import AuthLayout from '@/Layouts/AuthLayout'
-import { Head, useForm } from '@inertiajs/react'
+import { Head, Link, useForm } from '@inertiajs/react'
 import { IconAt, IconCheck, IconPassword, IconPlus } from '@tabler/icons-react'
 import React from 'react'
 
@@ -52,20 +52,18 @@ export default function Login() {
                 </div>
                 <div className='flex flex-wrap items-center gap-2'>
                     <Button
-                        className={'bg-teal-600 shadow shadow-teal-500 text-white'}
+                        className={'bg-sky-600 shadow shadow-sky-500 text-white'}
                         icon={<IconCheck size={'20'} strokeWidth={'1.5'}/>}
                         label={'Login'}
-                    />
-                    <Button
-                        className={'bg-sky-600 shadow shadow-sky-500 text-white'}
-                        icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
-                        label={'Daftar'}
-                        type={'link'}
-                        href={route('register')}
                     />
                 </div>
             </form>
         </AuthCard>
+        <div className='mt-5'>
+            <div className='text-gray-500'>
+                Belum punya akun ? <Link href='/register' className='text-rose-400 underline'>Daftar disini</Link>
+            </div>
+        </div>
     </>
   )
 }

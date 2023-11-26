@@ -80,16 +80,14 @@ export default function Register() {
                         icon={<IconPlus size={'20'} strokeWidth={'1.5'}/>}
                         label={'Daftar'}
                     />
-                    <Button
-                        className={'bg-gray-600 shadow shadow-gray-500 text-white'}
-                        icon={<IconUser size={'20'} strokeWidth={'1.5'}/>}
-                        label={'Sudah Punya Akun'}
-                        type={'link'}
-                        href={route('login')}
-                    />
                 </div>
             </form>
         </AuthCard>
+        <div className='mt-5'>
+            <div className='text-gray-500'>
+                Sudah punya akun ? <Link href='/login' className='text-rose-400 underline'>Masuk disini</Link>
+            </div>
+        </div>
     </>
   )
 }

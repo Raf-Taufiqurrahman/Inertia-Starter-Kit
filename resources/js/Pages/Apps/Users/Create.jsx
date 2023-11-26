@@ -90,7 +90,7 @@ export default function Create() {
                         <label className='text-gray-600 text-sm'>Roles</label>
                         <div className='grid grid-cols-1 gap-x-3 gap-y-1.5 h-[400px] overflow-y-auto'>
                             {roles.map((role, i) => (
-                                <div className='border-b px-4 py-2 border-dashed' key={i}>
+                                <div className='border-b px-4 pb-2 pt-1 border-dashed' key={i}>
                                     <div className='flex items-center gap-2 mb-1.5'>
                                         <input
                                             type='checkbox'

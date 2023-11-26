@@ -55,7 +55,7 @@ class ProfileController extends Controller
         }
 
         // do it when request password is not empty string
-        if($request->password !== '' || $request->password !== null)
+        if($request->password != '' || $request->password != null)
             // update password user
             $user->update([
                 'password' => bcrypt($request->password),
